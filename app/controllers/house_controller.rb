@@ -8,9 +8,8 @@ class HouseController < ApplicationController
         @house = House.find_by id: params[:id]
     end
 
-    def profit
+    def bye
         @house = House.find_by id: params[:id]
-        @house.maximum(:price)
+        @house.update.status(bye: true)
     end
-
 end

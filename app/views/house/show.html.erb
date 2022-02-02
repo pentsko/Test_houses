@@ -3,10 +3,15 @@
   <p><%  @house.price.each_index do |x| %>
       <%= x+1  %>
      <% end %>
-  </p>
-  <h3>
-    <% @house.price.each_with_index do |el, i| %>
 
+  <%= link_to "Bye", "/house/#{@house.id}",  class: "btn btn-success"  %> </p>
+  <h3>
+    <% @house.price.each_with_index do |el, index| %>
+        <% if  el[index].to_i <= el[index+1].to_i %>
+            <%= el[index+1] %>
+        <% else %>
+            <%= el[index] %>
+        <% end %>
     <% end %>
-      </h3>
+  </h3>
 

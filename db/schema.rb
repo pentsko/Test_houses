@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_201035) do
+ActiveRecord::Schema.define(version: 2022_02_02_041412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(version: 2022_02_01_201035) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "buildings", force: :cascade do |t|
+    t.string "name"
+    t.integer "price", default: [], array: true
+    t.integer "subjects", default: [], array: true
+    t.integer "integer", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "houses", force: :cascade do |t|
     t.string "name"
     t.text "price", default: [], array: true
@@ -50,6 +59,8 @@ ActiveRecord::Schema.define(version: 2022_02_01_201035) do
     t.text "text", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "sell", default: false
+    t.boolean "bye", default: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

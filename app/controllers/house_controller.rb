@@ -6,10 +6,11 @@ class HouseController < ApplicationController
 
     def show
         @house = House.find_by id: params[:id]
+
     end
 
-    def bye
-        @house = House.find_by id: params[:id]
-        @house.update.status(bye: true)
+    def buy
+        @house = House.find(params[:id])
+        @house.update_attributes!(bye: true)
     end
 end

@@ -1,17 +1,22 @@
 
-  <h2><%= @house.name %></h2>
-  <p><%  @house.price.each_index do |x| %>
-      <%= x+1  %>
-     <% end %>
+<!--  <h2><%#= @house.name %></h2>-->
+<!--  <p><%#  @house.price.each_index do |x| %>-->
+      <%#= x+1  %>
+      <%# end %>
+<!--    <h2><%#= @house.inspect %></h2>-->
 
-  <%= link_to "Bye", "/house/#{@house.id}",  class: "btn btn-success"  %> </p>
-  <h3>
-    <% @house.price.each_with_index do |el, index| %>
-        <% if  el[index].to_i <= el[index+1].to_i %>
-            <%= el[index+1] %>
-        <% else %>
-            <%= el[index] %>
-        <% end %>
+<!--  <%#= link_to "Buy", "/house/#{@house.id}",  class: "btn btn-success"  %> </p>-->
+<!--  <h3>-->
+    <%# @house.price.each_with_index do |el, index| %>
+        <%# if  el[index].to_i <= el[index+1].to_i %>
+            <%#= el[index+1] %>
+        <%# else %>
+            <%#= el[index] %>
+        <%# end %>
+    <%# end %>
+<!--  </h3>-->
+
+<h1><% @houses.each do |house| %>
+    <%= house.name %>
     <% end %>
-  </h3>
-
+</h1>

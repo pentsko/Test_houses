@@ -1,5 +1,5 @@
 <br>
-  <% @house.each do |u| %>
-      <h2><%= link_to u.name, "/house/#{u.id}" %></h2>
+  <% @house.each do |house| %>
+      <h2><%= link_to house.name, house_path(@house) %></h2>
   <% end %>
 
